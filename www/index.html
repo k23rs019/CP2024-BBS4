@@ -129,6 +129,7 @@ function createPost(author, content) {
         .finally(() => {
             button.prop('disabled', false);
         });
+        
 }
 
 // HTMLエスケープ処理
@@ -443,12 +444,12 @@ function clearAuthForm() {
 }
 
 // UI更新
-// 　バグ入りなので要修正（emailアドレスを表示するべきところを uid を表示してしまっている）
+
 function updateUI(user) {
     if (user) {
         $('.logged-in').show();
         $('.logged-out').hide();
-        $('#userEmail').text(user.uid);
+        $('#userEmail').text(user.email);
     } else {
         $('.logged-in').hide();
         $('.logged-out').show();
